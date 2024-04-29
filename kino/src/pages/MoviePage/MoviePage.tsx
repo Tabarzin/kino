@@ -1,71 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { moviesStore } from "../../stores/MoviesStore";
 import * as React from "react";
-import { Flex, Layout, Typography, Divider, Row, Col } from "antd";
-import { NONAME } from "dns";
-
-// const { Header, Footer, Content } = Layout;
-
-// const headerStyle: React.CSSProperties = {
-//   textAlign: "center",
-//   color: "#fff",
-//   height: 64,
-//   paddingInline: 48,
-//   lineHeight: "64px",
-//   backgroundColor: "#4096ff",
-// };
-
-// const contentStyle: React.CSSProperties = {
-//   textAlign: "center",
-//   minHeight: 120,
-//   lineHeight: "120px",
-//   color: "#fff",
-//   backgroundColor: "#0958d9",
-// };
-
-// const footerStyle: React.CSSProperties = {
-//   textAlign: "center",
-//   color: "#fff",
-//   backgroundColor: "#4096ff",
-// };
-
-// const layoutStyle = {
-//   borderRadius: 8,
-//   overflow: "hidden",
-//   width: "100%",
-//   maxWidth: "1440px",
-// };
-
-// const MoviePage: React.FC = () => {
-//   const { id } = useParams();
-//   const movie = moviesStore.movies.find((movie) => movie.id === parseInt(id));
-
-//   if (!movie) {
-//     return <div>Movie not found</div>;
-//   }
-
-//   return (
-//     <Flex gap="middle" wrap="wrap">
-//       <Layout style={layoutStyle}>
-//         <Header style={headerStyle}>КИНОСПРАВОЧНИК</Header>
-//         <Content style={contentStyle}>
-//           {movie.name}
-//           {movie.year}
-//           {movie.description}
-//           {movie.description}
-//           {movie.rating.imdb}
-//           {movie.movieLength}
-//           {movie.poster.url}
-//           {movie.genres}
-//           {movie.countries}
-//         </Content>
-//         <Footer style={footerStyle}>Footer</Footer>
-//       </Layout>
-//     </Flex>
-//   );
-// };
-
-// export default MoviePage;
+import { Layout, Typography, Divider, Row, Col } from "antd";
 
 const { Header, Content, Footer } = Layout;
 const { Title, Paragraph } = Typography;

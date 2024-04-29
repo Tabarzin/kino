@@ -56,7 +56,7 @@ const MoviesPage: React.FC<MoviesPageProps> = ({}) => {
               <InfiniteScroll
                 dataLength={moviesStore.movies.length}
                 next={moviesStore.fetchMovies}
-                hasMore={true} // Adjust this based on your data fetching logic
+                hasMore={true}
                 loader={<h4>Loading...</h4>}
                 endMessage={
                   <p style={{ textAlign: "center" }}>

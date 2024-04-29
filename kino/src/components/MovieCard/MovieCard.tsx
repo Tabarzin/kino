@@ -1,6 +1,4 @@
-import st from "./Moviecard.module.css";
 import { Link } from "react-router-dom";
-
 import { Card } from "antd";
 import * as React from "react";
 import { useState } from "react";
@@ -22,12 +20,6 @@ interface Movie {
   genres: { name: string }[];
   countries: { name: string }[];
 }
-
-const imageStyle: React.CSSProperties = {
-  width: "100%",
-  maxWidth: "200px",
-  height: "auto",
-};
 
 const MovieCard: React.FC<Movie> = ({
   id,
