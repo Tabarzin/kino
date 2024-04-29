@@ -40,8 +40,6 @@ class MoviesStore {
       );
       const data = await response.json();
 
-      console.log(data, "MOV");
-
       runInAction(() => {
         this.movies = data.docs || [];
         this.isLoading = false;
