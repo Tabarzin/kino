@@ -4,14 +4,14 @@ import * as React from "react";
 import { useState } from "react";
 
 interface Movie {
-  id: number;
+  id: number | undefined;
   name: string;
   year: number;
   description: string;
   shortDescription: string;
   rating: {
-    kp?: number;
-    imdb?: number;
+    kp?: number | undefined;
+    imdb: number;
   };
   movieLength: number;
   poster: {
@@ -43,7 +43,7 @@ const MovieCard: React.FC<Movie> = ({
     <Link to={`/movie/${id}`}>
       <Card title={name} onClick={toggleDescription}>
         <img
-          src={poster}
+          src={poster.url}
           alt={name}
           style={{ width: "100%", maxWidth: "200px", height: "auto" }}
         />
@@ -63,7 +63,7 @@ const MovieCard: React.FC<Movie> = ({
             </p>
 
             <p>
-              <strong>Рейтинг IMDB:</strong> {rating}
+              <strong>Рейтинг IMDB:</strong> {rating.imdb}
             </p>
             <p>
               <strong>Продолжительность:</strong> {movieLength} мин

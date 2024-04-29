@@ -39,7 +39,7 @@ const layoutStyle = {
   maxWidth: "1440px",
 };
 
-const MoviesPage: React.FC<MoviesPageProps> = ({}) => {
+const MoviesPage: React.FC = ({}) => {
   useEffect(() => {
     moviesStore.fetchMovies();
   }, []);
@@ -73,9 +73,9 @@ const MoviesPage: React.FC<MoviesPageProps> = ({}) => {
                         year={movie.year}
                         description={movie.description}
                         shortDescription={movie.shortDescription}
-                        rating={movie.rating.imdb}
+                        rating={movie.rating}
                         movieLength={movie.movieLength}
-                        poster={movie.poster.url}
+                        poster={movie.poster}
                         genres={movie.genres}
                         countries={movie.countries}
                       />

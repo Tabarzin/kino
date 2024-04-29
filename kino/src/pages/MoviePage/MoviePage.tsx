@@ -8,7 +8,10 @@ const { Title, Paragraph } = Typography;
 
 const MoviePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const movie = moviesStore.movies.find((movie) => movie.id === parseInt(id));
+  //   const movie = moviesStore.movies.find((movie) => movie.id === parseInt(id));
+  const movie = id
+    ? moviesStore.movies.find((movie) => movie.id === parseInt(id))
+    : undefined;
 
   if (!movie) {
     return <div>Movie not found</div>;

@@ -1,14 +1,14 @@
 import { makeAutoObservable, runInAction } from "mobx";
 
 interface Movie {
-  id: number;
+  id?: number;
   name: string;
   year: number;
   description: string;
   shortDescription: string;
   rating: {
     kp?: number;
-    imdb?: number;
+    imdb: number;
   };
   movieLength: number;
   poster: {
