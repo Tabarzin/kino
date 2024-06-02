@@ -22,8 +22,9 @@ const MoviePage = () => {
 
   if (!movie) return <div>Movie not found</div>;
 
-  const genres = movie.genres.map((genre) => genre.name).join(", ");
-  const countries = movie.countries.map((country) => country.name).join(", ");
+  const genres = movie.genres?.map((genre) => genre.name).join(", ") || "N/A";
+  const countries =
+    movie.countries?.map((country) => country.name).join(", ") || "N/A";
 
   return (
     <Layout>
@@ -41,7 +42,7 @@ const MoviePage = () => {
             </Col>
             <Col span={isSmallScreen ? 24 : 12}>
               <img
-                src={movie.poster.url}
+                src={movie.poster?.url || "https://placehold.co/400"}
                 alt={movie.name}
                 style={{
                   maxWidth: "100%",
@@ -51,16 +52,16 @@ const MoviePage = () => {
             </Col>
             <Col span={isSmallScreen ? 24 : 12}>
               <Paragraph>
-                <strong>Год:</strong> {movie.year}
+                <strong>Год:</strong> {movie.year || "N/A"}
               </Paragraph>
               <Paragraph>
-                <strong>О фильме:</strong> {movie.description}
+                <strong>О фильме:</strong> {movie.description || "N/A"}
               </Paragraph>
               <Paragraph>
-                <strong>Рейтинг IMDB:</strong> {movie.rating.imdb}
+                <strong>Рейтинг IMDB:</strong> {movie.rating?.imdb || "N/A"}
               </Paragraph>
               <Paragraph>
-                <strong>Продолжительность:</strong> {movie.movieLength}
+                <strong>Продолжительность:</strong> {movie.movieLength || "N/A"}
               </Paragraph>
               <Paragraph>
                 <strong>Жанр:</strong> {genres}

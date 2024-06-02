@@ -39,11 +39,12 @@ const MovieCard: React.FC<Movie> = ({
     setShowFullDescription(!showFullDescription);
   };
 
+  const posterUrl = poster?.url || "https://placehold.co/400";
   return (
     <Link to={`/movie/${id}`}>
       <Card title={name} onClick={toggleDescription}>
         <img
-          src={poster.url}
+          src={posterUrl}
           alt={name}
           style={{ width: "100%", maxWidth: "200px", height: "auto" }}
         />
@@ -52,21 +53,22 @@ const MovieCard: React.FC<Movie> = ({
           <>
             <p>
               <strong>Жанр:</strong>{" "}
-              {genres.map((genre) => genre.name).join(", ")}
+              {genres?.map((genre) => genre.name).join(", ") || "N/A"}
             </p>
             <p>
               <strong>Страна:</strong>{" "}
-              {countries.map((country) => country.name).join(", ")}
+              {countries?.map((country) => country.name).join(", ") || "N/A"}
             </p>
             <p>
               <strong>Год:</strong> {year}
             </p>
 
             <p>
-              <strong>Рейтинг IMDB:</strong> {rating.imdb}
+              <strong>Рейтинг IMDB:</strong> {rating?.imdb || "N/A"}
+              check and default value
             </p>
             <p>
-              <strong>Продолжительность:</strong> {movieLength} мин
+              <strong>Продолжительность:</strong> {movieLength || "N/A"} мин
             </p>
           </>
         )}
